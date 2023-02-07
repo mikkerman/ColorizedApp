@@ -27,7 +27,6 @@ final class ViewController: UIViewController {
         redLabel.text = redSlider.minimumValue.formatted()
         greenLabel.text = greenSlider.minimumValue.formatted()
         blueLabel.text = blueSlider.minimumValue.formatted()
-        
     }
     
     // MARK: - SliderActions
@@ -50,6 +49,8 @@ final class ViewController: UIViewController {
         blueLabel.text = blueSlider.value.formatted()
         viewColorChange()
     }
+    
+    // MARK: - Private functions
     
    private func viewColorChange() {
         colorView.backgroundColor = UIColor (
