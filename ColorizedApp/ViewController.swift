@@ -23,10 +23,8 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorView.layer.cornerRadius = 15
-        redLabel.text = redSlider.minimumValue.formatted()
-        greenLabel.text = greenSlider.minimumValue.formatted()
-        blueLabel.text = blueSlider.minimumValue.formatted()
+        viewColorChange()
+        setupColorView()
     }
     
     // MARK: - SliderActions
@@ -34,7 +32,6 @@ final class ViewController: UIViewController {
         redSlider.value = Float(round(100 * redSlider.value) / 100)
         redLabel.text = redSlider.value.formatted()
         viewColorChange()
-        
     }
     
   
@@ -58,6 +55,13 @@ final class ViewController: UIViewController {
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: (1))
+    }
+    
+    private func setupColorView() {
+        colorView.layer.cornerRadius = 15
+        redLabel.text = redSlider.minimumValue.formatted()
+        greenLabel.text = greenSlider.minimumValue.formatted()
+        blueLabel.text = blueSlider.minimumValue.formatted()
     }
     
    
